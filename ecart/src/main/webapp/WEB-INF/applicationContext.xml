@@ -43,6 +43,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                    <value>com.niit.ecart.model.Product</value>
                     <value>com.niit.ecart.model.Category</value>
                      <value>com.niit.ecart.model.User</value>
+                     <value>com.niit.ecart.model.Users</value>
                   
             </list>
       </property>
