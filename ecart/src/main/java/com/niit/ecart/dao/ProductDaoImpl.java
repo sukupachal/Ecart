@@ -2,6 +2,7 @@ package com.niit.ecart.dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -62,6 +63,24 @@ public class ProductDaoImpl implements ProductDao{
         session.close();
         
 		return product;
+	}
+	public boolean addProduct(Product product) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		
+		try
+		{
+			session.save(product);
+			session.flush();
+			session.close();
+			return true;
+		}
+		catch(HibernateException e)
+		{
+			return false;	
+		}
+		
+		
 	}
 	
 	

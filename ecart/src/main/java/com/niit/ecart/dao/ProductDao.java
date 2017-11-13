@@ -9,4 +9,5 @@ public interface ProductDao {
 	public List<Product> list();
 	public List<Product> listByCategoryId(int categoryId);
 	public Product listByProductId(int productId);
+	public boolean addProduct(Product product);
 }
