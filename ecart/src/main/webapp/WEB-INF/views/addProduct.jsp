@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
-  
+<c:set var="context" value="${pageContext.request.contextPath}"></c:set>  
         <h1>Add New Product</h1>  
-       <form:form method="post" action="saveProduct">    
+       <form:form method="post" action="${context}/saveProduct"  enctype="multipart/form-data">    
         <table >    
          <tr>    
           <td>Name : </td>   
@@ -13,7 +14,16 @@
          <tr>    
           <td>Price :</td>    
           <td><form:input path="productPrice" /></td>  
-         </tr>  
+         </tr> 
+         <tr><td>
+         <form:select class="form-control" path="productCategory.categoryId">
+         <c:forEach items="${categoryList}" var="productCategory">
+         <form:option value="${productCategory.categoryId}">
+         ${productCategory.categoryName}
+         </form:option>
+         </c:forEach>
+         </form:select> </td></tr>
+         
          <tr>    
           <td><form:hidden path="productImage"/></td>     
          </tr> 

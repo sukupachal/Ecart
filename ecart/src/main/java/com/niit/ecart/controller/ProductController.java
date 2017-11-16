@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.ecart.dao.CategoryDao;
 import com.niit.ecart.dao.ProductDao;
 import com.niit.ecart.model.Category;
 import com.niit.ecart.model.Product;
@@ -26,10 +27,19 @@ public class ProductController {
 
 @Autowired
 ProductDao productDao;
+@Autowired
+CategoryDao  categoryDao;
 
 @RequestMapping("/addProduct")
-public ModelAndView add(){
-	return new ModelAndView("addProduct","command",new Product());
+public ModelAndView add(HttpSession  session){
+	
+	
+	 List<Category>  categoryList=categoryDao.list();
+	 session.setAttribute("categoryList", categoryList);
+	 ModelAndView mv=new ModelAndView("addProduct","command",new Product());
+	 mv.addObject("categoryList", categoryList);
+	 
+	return mv;
 }
 
 
@@ -46,7 +56,7 @@ public ModelAndView save(@ModelAttribute("product")Product product , HttpServlet
 	String realContextPath =context.getRealPath("/");
 	String pn =product.getProductName();
 	if(file!=null){
-		fileName=realContextPath + "/resources/img" + pn + ".jpg";
+		fileName=realContextPath + "/resources/img/" + pn + ".jpg";
 		productImage = "resources/img/" + pn + ".jpg";
 		File  fileobj = new File(fileName);
 		try{
@@ -62,8 +72,7 @@ public ModelAndView save(@ModelAttribute("product")Product product , HttpServlet
 	}
 	
 	product.setProductImage(productImage);
-	Category c=new Category();
-	product.setProductCategory(c);
+	
 	productDao.addProduct(product);
 	return new ModelAndView("redirect:/viewProducts");
 }
