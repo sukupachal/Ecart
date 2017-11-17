@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.ecart.model.Cart;
 import com.niit.ecart.model.User;
 
-@Repository("cartDaoImpl")
+@Repository("CartDaoImpl")
 @Transactional
 
 

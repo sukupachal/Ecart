@@ -1,4 +1,4 @@
-package com.niit.ecart.dao;
+ package com.niit.ecart.dao;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.ecart.model.Cart;
+
 import com.niit.ecart.model.OrderDetails;
 import com.niit.ecart.model.User;
 

@@ -1,4 +1,4 @@
-package com.niit.ecart.controller;
+package com.niit.ecart.dao;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import com.niit.ecart.model.Cart;
 import com.niit.ecart.model.CartItem;
 import com.niit.ecart.model.OrderDetails;
 
-@Repository("cartItemDao")
+@Repository("CartItemDao")
 @Transactional
 
 public class CartItemDaoImpl implements CartItemDao{
