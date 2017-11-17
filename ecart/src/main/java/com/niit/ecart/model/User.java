@@ -1,10 +1,14 @@
 package com.niit.ecart.model;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Length;
@@ -24,6 +28,66 @@ public class User implements Serializable
 	@Length(min=5 , max=5)
 	private String password;
 	private String role;
+	private String email;
+	public String getEmail() {
+		return email;
+	}
+
+
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+
+
+
+	public List<OrderDetails> getOrderDetails() {
+		return orderDetails;
+	}
+
+
+
+
+
+
+	public void setOrderDetails(List<OrderDetails> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+
+
+
+
+
+
+	public Cart getCart() {
+		return cart;
+	}
+
+
+
+
+
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+
+
+
+
+
+	@OneToMany(mappedBy="user")
+	private List<OrderDetails> orderDetails;
+	@OneToOne
+	@JoinColumn(name="cartId")
+	Cart cart;
 	private boolean enabled;
 
 	
