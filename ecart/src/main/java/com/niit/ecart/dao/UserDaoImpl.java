@@ -51,7 +51,7 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
-	public User getUsersById(int userId) {
+	public User getUsersById(String userId) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
 		return (User) session.get(User.class, userId);
