@@ -10,4 +10,7 @@ public interface ProductDao {
 	public List<Product> listByCategoryId(int categoryId);
 	public Product listByProductId(int productId);
 	public boolean addProduct(Product product);
+	public boolean updateProduct(Product product);
+	public boolean deleteProduct(Product product);
+	
 }

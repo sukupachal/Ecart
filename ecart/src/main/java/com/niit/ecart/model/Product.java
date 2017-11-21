@@ -61,5 +61,13 @@ public class Product {
 	public void setProductCategory(Category productCategory) {
 		this.productCategory = productCategory;
 	}
+
+	public boolean productStatus;
+	public boolean isProductStatus() {
+		return productStatus;
+	}
+	public void setProductStatus(boolean productStatus) {
+		this.productStatus = productStatus;
+	}
 	
 }

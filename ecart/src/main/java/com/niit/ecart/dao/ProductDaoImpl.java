@@ -82,6 +82,38 @@ public class ProductDaoImpl implements ProductDao{
 		
 		
 	}
+	public boolean updateProduct(Product product) {
+		// TODO Auto-generated method stub
+Session session = getSession();
+		
+		try
+		{
+			session.save(product);
+			session.flush();
+			session.close();
+			return true;
+		}
+		catch(HibernateException e)
+		{
+			return false;	
+		}
+	}
+	public boolean deleteProduct(Product product) {
+		// TODO Auto-generated method stub
+Session session = getSession();
+		
+		try
+		{
+			session.save(product);
+			session.flush();
+			session.close();
+			return true;
+		}
+		catch(HibernateException e)
+		{
+			return false;	
+		}
+	}
 	
 	
 

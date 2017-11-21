@@ -3,9 +3,9 @@
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
     <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
-    <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="header.jsp"></jsp:include> 
     
-    <c:if test="${cartItems.isEmpty()}">
+     <c:if test="${cartItems.isEmpty()}">
     <div class="container">
     <div class="alert alert-success alert-dismissable">
     <a href="#" class="close" data-dimiss="alert" aria-label="close">&times;</a>
@@ -13,7 +13,7 @@
     </div>
     </div>
     
-    </c:if>
+    </c:if> 
     
     
     <div class="table-responsive cart_info">
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
     
-    <c:forEach items="${cartItems}"var="cartItem">
+    <c:forEach items="${cartItems}" var="cartItem">
     <tr>
     <td class="cart_product">
     <a href="">
@@ -50,9 +50,9 @@
     <p class="cart_total_price">&#X20B9; ${cartItem.cartItemSubTotal}</p>
     </td>
     <td class="cart_delete">
-    <a class="cart_quantity_delete" href="${context}/deleteCartItem/${cartItem.cartItemId}">
-    <i class="fa fa-times"></i></a>
+    <a class="cart_quantity_delete" href="${context}/deleteCartItem/${cartItem.cartItemId}"></a>
     </td>
+    
     </tr>
     </c:forEach>
     

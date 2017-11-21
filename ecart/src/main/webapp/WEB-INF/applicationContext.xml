@@ -44,7 +44,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <value>com.niit.ecart.model.Category</value>
                      <value>com.niit.ecart.model.User</value>
                      <value>com.niit.ecart.model.Users</value>
-                  
+                  <value>com.niit.ecart.model.Cart</value>
+                  <value>com.niit.ecart.model.CartItem</value>
+                  <value>com.niit.ecart.model.OrderDetails</value>
             </list>
       </property>
 </bean>

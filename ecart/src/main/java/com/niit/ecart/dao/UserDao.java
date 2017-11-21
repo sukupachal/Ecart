@@ -6,12 +6,16 @@ import com.niit.ecart.model.User;
 
 
 public interface UserDao {
-	public void addUsers(User users);
-
+	public boolean addUsers(User users);
+	
+    public boolean deleteUser(User user);
+	
 	public User getUsersById(String userId);
+	
+	public boolean editUsers(User users);
 
 	public List<User> getAllUsers(String un);
 
 	public User getUsersByUsername(String userName);
-	public void editUsers(User users);
+	
 }

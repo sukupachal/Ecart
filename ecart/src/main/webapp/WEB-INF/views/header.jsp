@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
  <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+  <c:set var="context" value="${pageContext.request.contextPath}"/>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -38,6 +42,28 @@
           <c:if test="${pageContext.request.userPrincipal.name==null}"><li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-register"></span> Sign UP</a></li></c:if>
         
       </ul>
+      
+      <ul class="nav navbar-nav">
+<c:if test="${pageContext.request.userPrincipal.name!=null}">
+<li><a href="">Hello${user.userName}</li>
+</c:if>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+<li><a href="${context}/adminProductCategoryView">Admin Control</a></li>
+</security:authorize>
+<security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+<li><a href="checkout.html">Checkout</a></li>
+</security:authorize>
+<li><a href="${context}/cartView">Cart</a></li>
+<security:authorize access="isAnonymous()">
+<li><a href="${context}/userRegistrationView">SignUp</a></li>
+<li><a href="${context}/loginPage">Login</a></li>
+</security:authorize>
+<security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+<li><a href="${context}/logout">Logout</a></li>
+</security:authorize>
+</ul>
+      
+      
     </div>
   </div>
 </nav>
