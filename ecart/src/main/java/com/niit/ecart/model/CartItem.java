@@ -22,14 +22,7 @@ public void setCartItemId(int cartItemId) {
 }
 
 
-public String getCartItemsstatus() {
-	return cartItemsstatus;
-}
 
-
-public void setCartItemsstatus(String cartItemsstatus) {
-	this.cartItemsstatus = cartItemsstatus;
-}
 
 
 public Product getProduct() {
@@ -62,13 +55,23 @@ public void setOrderDetails(OrderDetails orderDetails) {
 }
 
 
-private String cartItemsstatus;
+private String cartItemsStatus;
 @OneToOne
 @JoinColumn(name="productId")
 private Product product;
 @ManyToOne
 @JoinColumn(name="cartId")
 private Cart cart;
+
+
+public String getCartItemsStatus() {
+	return cartItemsStatus;
+}
+
+
+public void setCartItemsStatus(String cartItemsStatus) {
+	this.cartItemsStatus = cartItemsStatus;
+}
 
 
 @ManyToOne

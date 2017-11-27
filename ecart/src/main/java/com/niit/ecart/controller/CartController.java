@@ -1,6 +1,7 @@
 package com.niit.ecart.controller;
 
 import java.security.Principal;
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.ecart.dao.CartDao;
@@ -57,7 +60,7 @@ public class CartController {
 		for(CartItem cartItem:cartItems){
 			total+=cartItem.getCartItemSubTotal();
 		}
-		cart.setCarttotal(total);
+		cart.setCartTotal(total);
 		
 		System.out.println("****************cartid"+cart.getCartId());
 		cartDao.updateCart(cart);
@@ -97,7 +100,7 @@ public class CartController {
 		cartItem.setCart(cart);
 		cartItem.setCartItemQuantity(1);
 		cartItem.setCartItemSubTotal(product.getProductPrice());
-		cartItem.setCartItemsstatus("N");
+		cartItem.setCartItemsStatus("N");
 		cartItemDao.insertCartItem(cartItem);
 		
 		return modelAndView;
@@ -110,10 +113,59 @@ public class CartController {
 		ModelAndView modelAndView=new ModelAndView("redirect:/cartView");
 		CartItem cartItem=cartItemDao.getCartItemByCartItemId(cartItemId);
 		Cart cart=cartItem.getCart();
-		cart.setCarttotal(cart.getCarttotal()-cartItem.getCartItemSubTotal());
+		cart.setCartTotal(cart.getCartTotal()-cartItem.getCartItemSubTotal());
 		
-		System.out.println("carttotal from delete cart"+cart.getCarttotal());
+		System.out.println("carttotal from delete cart"+cart.getCartTotal());
 		cartItemDao.deleteCartItem(cartItem);
 		return modelAndView;
 	}
+	
+	
+	
+	@RequestMapping(value = "/order",method=RequestMethod.GET)
+	public ModelAndView orderDetails(){
+		return new
+				ModelAndView("order","command",new OrderDetails());
+	}
+	
+	
+	
+	@RequestMapping(value="/addToOrderDetails",method=RequestMethod.POST)
+	public ModelAndView
+	addToOrderDetails(@ModelAttribute("OrderDetails") OrderDetails orderDetails,Principal principal,HttpSession httpsession){
+		System.out.println("at addToOrderDetails");
+		ModelAndView modelAndView=new ModelAndView("redirect:/order");
+		User user=userDao.getUsersById(principal.getName());
+		orderDetails.setUser(user);
+		Date d=new Date(System.currentTimeMillis());
+		Cart cart=user.getCart();
+		orderDetails.setOrderDetailsTotal(cart.getCartTotal());
+		orderDetails.setOrderDetails(d);
+		orderDetailsDao.insertOrderDetails(orderDetails);
+		List<CartItem> cartItems=cartItemDao.getAllCartItem();
+		for(CartItem cartItem:cartItems){
+			cartItem.setOrderDetails(orderDetails);
+			cartItem.setCartItemsStatus("ORDERED");
+			cartItemDao.updateCartItem(cartItem);
+		}
+		System.out.println("cartItems are updated");
+		cart.setCartTotal(0);
+		cartDao.updateCart(cart);
+		orderDetailsDao.updateOrderDetails(orderDetails);
+		//for email
+		String recipientAddress=user.getEmail();
+		String subject ="(ECART) Order Confirmed";
+		String message="Hello"+user.getName()+",\n"+"your order has been recived on"+d.toString()+",and will be deliver to you soon. "+"Total is INR"+orderDetails.getOrderDetailsTotal()+" only."+"\n Thank You For Shopping. ";
+		System.out.println("To: "+recipientAddress);
+		System.out.println("Subject: "+subject);
+		System.out.println("Message: "+message);
+		
+		return modelAndView;
+		
+	}
+	
+	
+	
 }
+
+

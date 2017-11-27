@@ -13,12 +13,13 @@ import javax.persistence.OneToMany;
 public class Cart implements Serializable {
 	@Id
 	@GeneratedValue
-	private int CartId;
+	private int cartId;
+	
 	public int getCartId() {
-		return CartId;
+		return cartId;
 	}
 	public void setCartId(int cartId) {
-		CartId = cartId;
+		this.cartId = cartId;
 	}
 	public List<CartItem> getCartItems() {
 		return cartItems;
@@ -26,11 +27,12 @@ public class Cart implements Serializable {
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
-	public double getCarttotal() {
-		return carttotal;
+	
+	public double getCartTotal() {
+		return cartTotal;
 	}
-	public void setCarttotal(double carttotal) {
-		this.carttotal = carttotal;
+	public void setCartTotal(double cartTotal) {
+		this.cartTotal = cartTotal;
 	}
 	public String getCartStatus() {
 		return cartStatus;
@@ -40,7 +42,7 @@ public class Cart implements Serializable {
 	}
 	@OneToMany(mappedBy="cart")
 	private List<CartItem> cartItems;
-	private double carttotal;
+	private double cartTotal;
 	private String cartStatus;
 
 }
