@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     
     <jsp:include page="header.jsp"></jsp:include> 
     
@@ -29,11 +30,12 @@
     <thead>
     <tr class="cart_menu">
     <td class="image">Item</td>
-    <td class="description"></td>
+    <td class="description">Description</td>
     <td class="price">Price</td>
     <td class="quantity">Quantity</td>
     <td class="total">Total</td>
     <td></td>
+    
     </tr>
     </thead>
     <tbody>
@@ -57,19 +59,20 @@
     <td class="cartTotal">
     <p class="cart_total_price">&#X20B9; ${cartItem.cartItemSubTotal}</p>
     </td>
-   
-    
     <td class="cart_delete">
-    <a class="cart_quantity_delete" href="${context}/deleteCartItem/${cartItem.cartItemId}"><i class="fa fa-times"></i></a>    
+    <a class="cart_quantity_delete" href="${context}/deleteCartItem/${cartItem.cartItemId}"><i class="fa fa-times" aria-hidden="true"></i>
+</a>    
     </td>
     <td>
     </td>
     </tr>
      </c:forEach>
     
-      <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">Check Out</a>
-     <a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/viewProducts">Continue shopping</a>
-    
+      <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">CheckOut</a>
+     <a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/home">Continue shopping</a>
+    <br><br>
+     <b>Cart</b><img src="C:\Users\USER\Desktop\Online Shop\ecom-cart.gif" style="width:128px;height:128px;">
+     <br>
     </tbody>
     
     </table>

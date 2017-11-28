@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -49,18 +49,18 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <img src="C:\Users\USER\Desktop\Online Shop\9to5google-hero.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>Sell $</h3>
-          <p>Money Money.</p>
+          <h3>New Google Pixel2</h3>
+          <p>This week's top stories...</p>
         </div>      
       </div>
 
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="C:\Users\USER\Desktop\Online Shop\iphone-8-white.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
+          <h3>iphone 8</h3>
+          <p>This week's top stories...</p>
         </div>      
       </div>
     </div>
@@ -80,26 +80,26 @@
   <h3>What We Do</h3><br>
   <div class="row">
     <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+      <img src="C:\Users\USER\Desktop\Online Shop\bbb.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>Buy This Is Not Your Story</p>
     </div>
     <div class="col-sm-4"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
+      <img src="C:\Users\USER\Desktop\Online Shop\front.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>Buy The Boy Who Loved</p>    
     </div>
     <div class="col-sm-4">
       <div class="well">
-       <p>Some text..</p>
+       <p>Buy This Is Not Your Story by SAVI SHARMA @just of Rs.75</p>
       </div>
       <div class="well">
-       <p>Some text..</p>
+       <p>Buy One Indian Girl by Chetan Bhagat @just of Rs.88</p>
       </div>
     </div>
   </div>
 </div><br>
   
   <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>100% Purchase Protection</p>
 </footer>
   
 </head>

@@ -55,10 +55,10 @@
 <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
 <li><a href="checkout.html">Checkout</a></li>
 </security:authorize>
-<li><a href="${context}/cartView">Cart</a></li>
+<li><a href="${pageContext.request.contextPath}/cartView">Cart</a></li>
 <security:authorize access="isAnonymous()">
-<li><a href="${context}/userRegistrationView">SignUp</a></li>
-<li><a href="${context}/loginPage">Login</a></li>
+<li><a href="${pageContext.request.contextPath}/register">SignUp</a></li>
+<li><a href="${pageContext.request.contextPath}/loginPage">Login</a></li>
 </security:authorize>
 <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
 <li><a href="${context}/logout">Logout</a></li>

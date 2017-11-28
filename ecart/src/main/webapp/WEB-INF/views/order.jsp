@@ -28,11 +28,11 @@
  <div class="total_area">
  <ul>
  
- <li>Total<span>&#x20B9; ${cart.cartTotal}</span></li>
+ <li>Total<span>&#x20B9; ${cart.cartTotal}</span></li><br>
  <form:form action="addToOrderDetails" method="post">
- <li><form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"/></li>
- <li><form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"/></li>
- <form:hidden path="orderDetailsTotal"/>
+ <li>Address<form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"/></li>
+ <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"/></li>
+ <form:hidden path="orderDetailsTotal"/><br>
  <li><input class="btn btn-default update" type="submit" value="Check Out"></li>
  </form:form>
  
