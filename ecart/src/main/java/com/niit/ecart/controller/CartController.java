@@ -133,13 +133,15 @@ public class CartController {
 	@RequestMapping(value="/addToOrderDetails",method=RequestMethod.POST)
 	public ModelAndView
 	addToOrderDetails(@ModelAttribute("OrderDetails") OrderDetails orderDetails,Principal principal,HttpSession httpsession){
+		String tot=(String)httpsession.getAttribute("grandTotal");
+		int total=Integer.parseInt(tot);
 		System.out.println("at addToOrderDetails");
 		ModelAndView modelAndView=new ModelAndView("redirect:/order");
 		User user=userDao.getUsersById(principal.getName());
 		orderDetails.setUser(user);
 		Date d=new Date(System.currentTimeMillis());
 		Cart cart=user.getCart();
-		orderDetails.setOrderDetailsTotal(cart.getCartTotal());
+		orderDetails.setOrderDetailsTotal(total);
 		orderDetails.setOrderDetails(d);
 		orderDetailsDao.insertOrderDetails(orderDetails);
 		List<CartItem> cartItems=cartItemDao.getAllCartItem();
@@ -152,13 +154,7 @@ public class CartController {
 		cart.setCartTotal(0);
 		cartDao.updateCart(cart);
 		orderDetailsDao.updateOrderDetails(orderDetails);
-		//for email
-		String recipientAddress=user.getEmail();
-		String subject ="(ECART) Order Confirmed";
-		String message="Hello"+user.getName()+",\n"+"your order has been recived on"+d.toString()+",and will be deliver to you soon. "+"Total is INR"+orderDetails.getOrderDetailsTotal()+" only."+"\n Thank You For Shopping. ";
-		System.out.println("To: "+recipientAddress);
-		System.out.println("Subject: "+subject);
-		System.out.println("Message: "+message);
+		
 		
 		return modelAndView;
 		

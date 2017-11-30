@@ -57,7 +57,7 @@
      <button type="submit" class="btn btn-default">SignUp</button>
      </form:form>
       
-      <p>Already an User? <a href="${pageContext.request.contextPath}/loginPage">Login now</a>
+      <p>Already a User? <a href="${pageContext.request.contextPath}/loginPage">Login now</a>
      </div><!-- /login form -->
      </div>
      <div class="col-sm-1">

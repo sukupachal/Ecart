@@ -56,6 +56,6 @@ method='POST'>
       </table>
   </form>
   
-  <p>Not an user? <a href="${pageContext.request.contextPath}/register">Register now</a>
+  <p>Not a user? <a href="${pageContext.request.contextPath}/register">Register now</a>
 </body>
 </html>

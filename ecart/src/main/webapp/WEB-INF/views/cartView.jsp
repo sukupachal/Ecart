@@ -41,6 +41,7 @@
     <tbody>
     
     <c:forEach items="${cartItems}" var="cartItem">
+    <c:set var="grandTotal" scope="session" value="${ grandTotal + cartItem.cartItemSubTotal}"/>
     <tr>
     <td class="cart_product">
     <a href="">
@@ -60,17 +61,18 @@
     <p class="cart_total_price">&#X20B9; ${cartItem.cartItemSubTotal}</p>
     </td>
     <td class="cart_delete">
-    <a class="cart_quantity_delete" href="${context}/deleteCartItem/${cartItem.cartItemId}"><i class="fa fa-times" aria-hidden="true"></i>
+    <a class="cart_quantity_delete" href="${pageContext.request.contextPath}/deleteCartItem/${cartItem.cartItemId}">Delete
 </a>    
     </td>
     <td>
     </td>
     </tr>
      </c:forEach>
+     <tr>
+    <th><b>Grand Total : ${grandTotal}</b></th>
+      <th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">CheckOut</a></th>
+     <th><a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/home">Continue shopping</a></th>
     
-      <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">CheckOut</a>
-     <a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/home">Continue shopping</a>
-    <br><br>
      <b>Cart</b><img src="C:\Users\USER\Desktop\Online Shop\ecom-cart.gif" style="width:128px;height:128px;">
      <br>
     </tbody>

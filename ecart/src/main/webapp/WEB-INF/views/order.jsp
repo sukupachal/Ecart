@@ -28,7 +28,7 @@
  <div class="total_area">
  <ul>
  
- <li>Total<span>&#x20B9; ${cart.cartTotal}</span></li><br>
+ <li>Total<span>&#x20B9; ${grandTotal}</span></li><br>
  <form:form action="addToOrderDetails" method="post">
  <li>Address<form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"/></li>
  <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"/></li>

@@ -109,9 +109,9 @@ public class CartItemDaoImpl implements CartItemDao{
 		// TODO Auto-generated method stub
 		Session session=getSession();
 		try{
-			Query query=session.createQuery("From CartItem where cart.cartId = ? And cartItemStatus = ?");
+			Query query=session.createQuery("From CartItem where cart.cartId = ? And cartItemsStatus = ?");
 			query.setInteger(0, cart.getCartId());
-			query.setString(1, "NOTORDERED");
+			query.setString(1, "N");
 			
 			return query.list();
 		}
