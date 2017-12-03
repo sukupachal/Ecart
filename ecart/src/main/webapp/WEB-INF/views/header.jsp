@@ -50,7 +50,7 @@
 <li><a href="">Hello${user.userName}</li>
 </c:if>
 <security:authorize access="hasRole('ROLE_ADMIN')">
-<li><a href="${context}/adminProductCategoryView">Admin Control</a></li>
+<li><a href="${context}/viewProducts">Admin Control</a></li>
 </security:authorize>
 <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
 <li><a href="checkout.html">Checkout</a></li>

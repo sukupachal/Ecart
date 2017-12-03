@@ -88,7 +88,7 @@ Session session = getSession();
 		
 		try
 		{
-			session.save(product);
+			session.update(product);
 			session.flush();
 			session.close();
 			return true;

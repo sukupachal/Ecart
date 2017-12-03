@@ -38,22 +38,7 @@ public class HomeController {
 	        return mv;  
 	    } 
 	 
-	 @RequestMapping("/showProductsByCategory/{categoryId}")  
-	    public ModelAndView showProductsByCategory(@PathVariable int categoryId ){  
-		 System.out.println("cat id "+categoryId);
-		 ModelAndView mv= new ModelAndView("products");
-		 mv.addObject("productList", productDao.listByCategoryId(categoryId));
-	        return mv;  
-	    } 
 	 
-	 
-	 @RequestMapping("/showProduct/{productId}")  
-	    public ModelAndView showProduct(@PathVariable int productId ){  
-		 
-		 ModelAndView mv= new ModelAndView("product");
-		 mv.addObject("product", productDao.listByProductId(productId));
-	        return mv;  
-	    } 
 	 
 	 
 	 

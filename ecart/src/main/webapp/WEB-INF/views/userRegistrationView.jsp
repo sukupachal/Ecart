@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-    <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+    
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
     
      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,12 +20,12 @@
  <jsp:include page="header.jsp"></jsp:include> 
  <title>Bootstrap Case</title>   
    
-<%--       <c:if test="${successMessage != null}"> 
+      <c:if test="${successMessage != null}"> 
    
     
     <div class="alert alert-sucess alert-dismissable container">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    ${sucessMessage}
+    ${successMessage}
     </div>
     </c:if> 
     
@@ -33,7 +34,7 @@
     <a href="#" class="close" data-dismiss="alert" aria-lable="close">&times;</a>
     <strong>Opps!!!</strong> ${errorMessage}
     </div>
-    </c:if>  --%>
+    </c:if>  
      <section id="form"><!-- form -->
      <div class="container"></div>
      <div class="container"></div>

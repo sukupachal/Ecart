@@ -19,6 +19,7 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
+
 <table align="center" border="2" width="70%" cellpadding="2">  
 <br><br>
 <tr><th>Products Images</th><th>Name of the Products</th><th>Show Products</th></tr>  
@@ -26,12 +27,14 @@
    <tr>  
    <td><img src="${pageContext.request.contextPath}/${user.userImage}" height="50" width="50"></td> 
    <td>${product.productName}</td>  
-       
+        
   
    <td><a href="${pageContext.request.contextPath}/showProduct/${product.productId}">Show</a></td>  
    
    </tr>  
    </c:forEach>  
-   </table>  
+   </table>
+   <tr><th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/addProduct">Add Product</a></th></tr>
+     
 </body>
 </html>

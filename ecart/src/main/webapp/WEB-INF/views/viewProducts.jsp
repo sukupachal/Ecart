@@ -15,10 +15,10 @@
    <td>${product.productImage}</td>  
   
   <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="50" width="50"></td>
-   <td><a href="editproducts/${product.productId}">Edit</a></td>  
-   <td><a href="deleteproducts/${product.productId}">Delete</a></td>  
+   <td><a href="${pageContext.request.contextPath}/discontinueProduct/${product.productId}">Discontinue</a></td>
+  <td><a href="${pageContext.request.contextPath}/updateProduct/${product.productId}">Edit</a></td>
    </tr>  
    </c:forEach>  
    </table>  
    <br/>  
-   <a href="productsform">Add New Product</a>  
+    <tr><th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/addProduct">Add Product</a></th></tr>

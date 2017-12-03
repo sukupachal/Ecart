@@ -101,15 +101,15 @@ public class UserController {
     		if(cartDao.insertCart(cart)){
     			user.setCart(cart);
     			if(userDao.addUsers(user)){
-    				modelAndView.addObject("successful message","You have been registered sucessfully.");
+    				modelAndView.addObject("successMessage","You have been registered sucessfully.");
     				return modelAndView;
     			}else{
     				
-    				modelAndView.addObject("error message","User has not been inserted!");
+    				modelAndView.addObject("errorMessage","User has not been inserted!");
     				return modelAndView;
     			}
     			}else{
-    				modelAndView.addObject("error message","Cart has not been inserted!");
+    				modelAndView.addObject("errorMessage","Cart has not been inserted!");
     				return modelAndView;
     			}
     			
