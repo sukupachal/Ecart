@@ -44,11 +44,11 @@ method='POST'>
       <table>
          <tr>
             <td>User:</td>
-            <td><input type='text' name='username' value=''></td>
+            <td><input type='text' name='username' value='' required></td>
          </tr>
          <tr>
             <td>Password:</td>
-            <td><input type='password' name='password' /></td>
+            <td><input type='password' name='password' required/></td>
          </tr>
          <tr>
             <td><input name="submit" type="submit" value="submit" /></td>

@@ -70,7 +70,7 @@
      </c:forEach>
      <tr>
     <th><b>Grand Total : ${grandTotal}</b></th>
-      <th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">CheckOut</a></th>
+      <th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">Place Order</a></th>
      <th><a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/home">Continue shopping</a></th>
     
      <b>Cart</b><img src="C:\Users\USER\Desktop\Online Shop\ecom-cart.gif" style="width:128px;height:128px;">

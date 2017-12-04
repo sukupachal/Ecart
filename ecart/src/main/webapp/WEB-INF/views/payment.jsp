@@ -81,7 +81,7 @@
                 </li>
             </ul>
             <br/>
-            <a href="#" class="btn btn-success btn-lg btn-block" role="button">Confirm</a>
+            <a href="${pageContext.request.contextPath}/checkout" class="btn btn-success btn-lg btn-block" role="button">Confirm</a>
         </div>
     </div>
 </div>

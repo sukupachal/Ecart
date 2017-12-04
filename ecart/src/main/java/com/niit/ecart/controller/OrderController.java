@@ -24,4 +24,16 @@ public class OrderController {
 				return mv;
 	
 }
+	@RequestMapping("/checkout")
+	public ModelAndView checkout(Principal principal, HttpSession httpSession) {
+		ModelAndView mv=new ModelAndView("checkout");
+		return mv;
+	}
+	
+	
+	@RequestMapping("/ack")
+	public ModelAndView ack(Principal principal, HttpSession httpSession) {
+		ModelAndView mv=new ModelAndView("ack");
+		return mv;
+	}
 }
