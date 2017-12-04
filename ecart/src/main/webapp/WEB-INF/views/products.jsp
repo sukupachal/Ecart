@@ -34,7 +34,7 @@
    </tr>  
    </c:forEach>  
    </table>
-   <tr><th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/addProduct">Add Product</a></th></tr>
+  
      
 </body>
 </html>

@@ -9,7 +9,12 @@
     <jsp:include page="header.jsp"></jsp:include>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
 <html>
+<body>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
@@ -19,6 +24,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 <title>Insert title here</title>
+
+
 
 <section id="do_action">
  <div class="container">
@@ -33,7 +40,7 @@
  <li>Address<form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"/></li>
  <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"/></li>
  <form:hidden path="orderDetailsTotal"/><br>
- <li><input class="btn btn-default update" type="submit" value="Check Out"></li>
+ <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/payment">Proceed</a>
  </form:form>
  
  
@@ -45,4 +52,6 @@
  </div>
  </div>
 </section>
+</head>
+</body>
 </html>

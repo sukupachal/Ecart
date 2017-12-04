@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <c:set var="context" value="${pageContext.request.contextPath}"></c:set>  
         <h1>Update Product</h1>  
-       <form:form method="post" action="${context}/saveProduct"  enctype="multipart/form-data">    
+       <form:form method="post" action="${context}/updateProducts"  enctype="multipart/form-data">    
         <table >    
          <tr>    
           <td>Name : </td>   
@@ -29,7 +29,7 @@
          </tr> 
          <tr>    
           <td>Choose Image </td>   
-          <td><input type="file" name="file"/></td>  
+          <td><input type="file" name="productImageFile"/></td>  
          </tr>
          
          <tr>    
@@ -37,4 +37,9 @@
           <td><input type="submit" value="Save" /></td>    
          </tr>    
         </table>    
+           
+
+       <form:hidden path="productImage" /> 
+       <form:hidden path="productId"/>
        </form:form>    
+       

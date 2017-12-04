@@ -103,7 +103,8 @@ public class ProductController {
 		
 		List<Category> categoryList = categoryDao.list();
 		session.setAttribute("categoryList", categoryList);
-		ModelAndView mv = new ModelAndView("updateProducts", "command", new Product());
+		Product p=productDao.listByProductId(productId);
+		ModelAndView mv = new ModelAndView("updateProducts", "command", p);
 		mv.addObject("categoryList", categoryList);
 
 		return mv;
@@ -115,21 +116,23 @@ public class ProductController {
 	public ModelAndView updateProduct(@ModelAttribute("Product") Product product, HttpServletRequest request,
 			@RequestParam("productImageFile") MultipartFile productImageFile, HttpSession httpSession) {
 		System.out.println("at updateProduct" + product.getProductId());
-		ModelAndView modelAndView = new ModelAndView("ProductView", "command", new Product());
+		ModelAndView modelAndView = new ModelAndView("redirect:/viewProducts");
 
-		int productId = ((Product) httpSession.getAttribute("product")).getProductId();
-		product.setProductId(productId);
+		/*int productId = ((Product) httpSession.getAttribute("product")).getProductId();
+		product.setProductId(productId);*/
 
 		byte fileBytes[];
 		FileOutputStream fos = null;
 		String fileName = " ";
-		String productImage = " ";
+		String productImage ="";
 		ServletContext context = request.getServletContext();
 		String realContextPath = context.getRealPath("/");
 		String ProductName = product.getProductName();
 		
 		if (productImageFile != null) {
-			fileName = realContextPath + "resources/images/productimages/" + ProductName + ".jpg";
+			System.out.println("kkkkkkkkkkkkkk");
+			fileName = realContextPath + "resources/img/" + ProductName + ".jpg";
+			productImage="resources/img/" + ProductName + ".jpg";
 			System.out.println("===" + fileName + "===");
 			File fileobj = new File(fileName);
 			try {

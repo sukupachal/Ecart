@@ -2,6 +2,8 @@ package com.niit.ecart.model;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +14,7 @@ import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-public class Product {
+public class Product implements Serializable{
 
 	@Id
 	@GeneratedValue
