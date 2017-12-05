@@ -36,4 +36,16 @@ public class OrderController {
 		ModelAndView mv=new ModelAndView("ack");
 		return mv;
 	}
+	
+	@RequestMapping("/COD")
+	public ModelAndView cashOnDelivary(Principal principal, HttpSession httpSession) {
+		ModelAndView mv=new ModelAndView("cod");
+		return mv;
+	}
+	
+	@RequestMapping("/orderDetails")
+	public ModelAndView orderDetails(Principal principal, HttpSession httpSession) {
+		ModelAndView mv=new ModelAndView("orderDetails");
+		return mv;
+	}
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -63,7 +63,7 @@ public class CartController {
 		cart.setCartTotal(total);
 		
 		System.out.println("****************cartid"+cart.getCartId());
-		cartDao.updateCart(cart);
+		
 	}
 	httpSession.setAttribute("cart", cart);
 	return modelAndView;
@@ -133,17 +133,18 @@ public class CartController {
 	@RequestMapping(value="/addToOrderDetails",method=RequestMethod.POST)
 	public ModelAndView
 	addToOrderDetails(@ModelAttribute("OrderDetails") OrderDetails orderDetails,Principal principal,HttpSession httpsession){
-		String tot=(String)httpsession.getAttribute("grandTotal");
-		int total=Integer.parseInt(tot);
+		Double tot=(Double)httpsession.getAttribute("grandTotal");
+		//int total=Integer.parseInt(tot);
 		System.out.println("at addToOrderDetails");
-		ModelAndView modelAndView=new ModelAndView("redirect:/order");
+		ModelAndView modelAndView=new ModelAndView("redirect:/orderDetails");
 		User user=userDao.getUsersById(principal.getName());
 		orderDetails.setUser(user);
 		Date d=new Date(System.currentTimeMillis());
 		Cart cart=user.getCart();
-		orderDetails.setOrderDetailsTotal(total);
+		orderDetails.setOrderDetailsTotal(tot);
 		orderDetails.setOrderDetails(d);
 		orderDetailsDao.insertOrderDetails(orderDetails);
+		
 		List<CartItem> cartItems=cartItemDao.getAllCartItem();
 		for(CartItem cartItem:cartItems){
 			cartItem.setOrderDetails(orderDetails);
@@ -152,9 +153,9 @@ public class CartController {
 		}
 		System.out.println("cartItems are updated");
 		cart.setCartTotal(0);
-		cartDao.updateCart(cart);
+		//cartDao.updateCart(cart);
 		orderDetailsDao.updateOrderDetails(orderDetails);
-		
+		httpsession.setAttribute("orderDetails", orderDetails);
 		
 		return modelAndView;
 		

@@ -40,7 +40,8 @@
  <li>Address<form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"></form:textarea></li>
  <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"></form:input></li>
  <form:hidden path="orderDetailsTotal"/><br>
- <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/payment">Proceed</a>
+ <input type="submit"  value="Proceed">
+ <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/orderDetails">Submit</a>
  </form:form>
  
  

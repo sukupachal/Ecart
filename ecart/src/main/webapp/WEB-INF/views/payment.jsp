@@ -19,15 +19,7 @@
 <body>
 <div class="container">
   
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Payment
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Net Banking</a></li>
-      <li><a href="#">COD</a></li>
-      
-    </ul>
-  </div>
+  
 
 
 
