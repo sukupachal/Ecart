@@ -19,8 +19,8 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-
-<table align="center" border="2" width="70%" cellpadding="2">  
+<div class="container">
+<table align="center"  width="70%"  class="table table-hover table-condensed table-bordered">  
 <br><br>
 <tr><th>Products Images</th><th>Name of the Products</th><th>Show Products</th></tr>  
    <c:forEach var="product" items="${productList}">   
@@ -29,12 +29,12 @@
    <td>${product.productName}</td>  
         
   
-   <td><a href="${pageContext.request.contextPath}/showProduct/${product.productId}">Show</a></td>  
+   <td><a class="btn btn-info" href="${pageContext.request.contextPath}/showProduct/${product.productId}">Show</a></td>  
    
    </tr>  
    </c:forEach>  
    </table>
   
-     
+     </div>
 </body>
 </html>

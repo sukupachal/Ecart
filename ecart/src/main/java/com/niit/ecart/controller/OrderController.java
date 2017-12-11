@@ -21,11 +21,12 @@ public class OrderController {
 	public ModelAndView payment(Principal principal, HttpSession httpSession){
 		
 		ModelAndView mv=new ModelAndView("payment");
+	
 				return mv;
 	
 }
 	@RequestMapping("/checkout")
-	public ModelAndView checkout(Principal principal, HttpSession httpSession) {
+	public ModelAndView gotocheckout(Principal principal, HttpSession httpSession) {
 		ModelAndView mv=new ModelAndView("checkout");
 		return mv;
 	}
@@ -37,9 +38,9 @@ public class OrderController {
 		return mv;
 	}
 	
-	@RequestMapping("/COD")
+	@RequestMapping("/cashpay")
 	public ModelAndView cashOnDelivary(Principal principal, HttpSession httpSession) {
-		ModelAndView mv=new ModelAndView("cod");
+		ModelAndView mv=new ModelAndView("cashpay");
 		return mv;
 	}
 	

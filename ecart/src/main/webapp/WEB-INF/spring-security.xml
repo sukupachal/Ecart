@@ -28,6 +28,7 @@ xmlns:beans="http://www.springframework.org/schema/beans"
 	<intercept-url pattern="/viewdetail"
             access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/addToCart/*" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/manageproduct" access="hasRole('ROLE_ADMIN')" />
         
         <intercept-url pattern="/other/**" access="isAuthenticated()" />

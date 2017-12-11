@@ -6,13 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-
-
-
- <li><span class="badge pull-right"><span>&#x20B9; ${grandTotal}</span></span> Final Payment</a></li>
-  <a href="${pageContext.request.contextPath}/checkout" class="btn btn-success btn-lg btn-block" role="button">Confirm</a>
 </head>
 <body>
+<form>
 
+ <li><span class="badge pull-right"><span>&#x20B9; ${grandTotal}</span></span> Final Payment</a></li>
+ <a href="${pageContext.request.contextPath}/checkout" class="btn btn-success btn-lg btn-block" role="button">Confirm</a>
+
+</form>
 </body>
 </html>

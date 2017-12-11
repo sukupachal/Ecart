@@ -8,7 +8,7 @@
     
     <jsp:include page="header.jsp"></jsp:include>
     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
 
 
@@ -28,30 +28,35 @@
 
 
 <section id="do_action">
+ 
  <div class="container">
+<table align="center"  width="70%"  class="table table-hover table-condensed table-bordered"> 
  
  <div class="row">
  <div class="col-sm-12">
  <div class="total_area">
  <ul>
  
- <li>Total<span>&#x20B9; ${grandTotal}</span></li><br>
+ <div class="col-md-6" style="border:0px solid gray">
+ <li><h3><label>Total<span>&#x20B9; ${grandTotal}</span></label></h3></li><br>
  <form:form action="addToOrderDetails" method="post">
- <li>Address<form:textarea rows="5" placeholder="Address" path="orderDetailsAddress" class="form-control"></form:textarea></li>
- <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"></form:input></li>
+ <li>Address<form:textarea rows="5" required="true" placeholder="Address" path="orderDetailsAddress" class="form-control"></form:textarea></li>
+ <li>Area PIN Code<form:input path="orderDetailsPin" class="form-control" placeholder="PIN Code"  required="true" pattern="\d{6,6}"></form:input></li>
  <form:hidden path="orderDetailsTotal"/><br>
- <input type="submit"  value="Proceed">
- <a class="btn btn-default check_out" href="${pageContext.request.contextPath}/orderDetails">Submit</a>
+ <input type="submit" class="btn btn-success" value="Proceed">
+ 
  </form:form>
  
- 
+ </div>
  </ul>
+</div>
+</div>
+</div>
+
+</table>
+
  </div>
- </div>
- 
- 
- </div>
- </div>
+
 </section>
 </head>
 </body>

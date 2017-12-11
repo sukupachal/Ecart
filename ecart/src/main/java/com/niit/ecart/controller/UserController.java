@@ -25,10 +25,10 @@ public class UserController {
 	  UserDao userDao;
 	  @Autowired
 	  CartDao cartDao;
-	  @RequestMapping("/index")  
+	  /*@RequestMapping("/index")  
 	    public ModelAndView index(){  
 	        return new ModelAndView("index");  
-	    } 
+	    }*/ 
 	  
 	/*@RequestMapping("/usersform")  
     public ModelAndView showform(){  

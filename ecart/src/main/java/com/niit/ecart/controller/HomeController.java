@@ -30,7 +30,20 @@ public class HomeController {
 		 mv.addObject("categoryList", categoryDao.list());
 	        return mv;  
 	    } 
-	 
+	 @RequestMapping("/")  
+	    public ModelAndView index2(HttpSession session){  
+		 ModelAndView mv= new ModelAndView("home");
+		 session.setAttribute("categoryList", categoryDao.list());
+		 mv.addObject("categoryList", categoryDao.list());
+	        return mv;  
+	    } 
+	 @RequestMapping("/index")  
+	    public ModelAndView index1(HttpSession session){  
+		 ModelAndView mv= new ModelAndView("home");
+		 session.setAttribute("categoryList", categoryDao.list());
+		 mv.addObject("categoryList", categoryDao.list());
+	        return mv;  
+	    } 
 	 @RequestMapping("/home1")  
 	    public ModelAndView index1(){  
 		 ModelAndView mv= new ModelAndView("home_with_slider");

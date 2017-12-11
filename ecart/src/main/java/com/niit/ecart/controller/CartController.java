@@ -58,7 +58,7 @@ public class CartController {
 	if(cartItems!=null){
 		
 		for(CartItem cartItem:cartItems){
-			total+=cartItem.getCartItemSubTotal();
+			total=cartItem.getCartItemSubTotal();
 		}
 		cart.setCartTotal(total);
 		

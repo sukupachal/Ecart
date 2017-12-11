@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     
     <jsp:include page="header.jsp"></jsp:include> 
     
@@ -24,9 +25,11 @@
     
     </c:if> 
     
+    <div class="container">
+<table class="table table-hover table-condensed ">  
     
     <div class="table-responsive cart_info">
-    <table class="table table-condensed">
+    
     <thead>
     <tr class="cart_menu">
     <td class="image">Item</td>
@@ -61,8 +64,7 @@
     <p class="cart_total_price">&#X20B9; ${cartItem.cartItemSubTotal}</p>
     </td>
     <td class="cart_delete">
-    <a class="cart_quantity_delete" href="${pageContext.request.contextPath}/deleteCartItem/${cartItem.cartItemId}">Delete
-</a>    
+    <a class="cart_quantity_delete" href="${pageContext.request.contextPath}/deleteCartItem/${cartItem.cartItemId}"><i class="far fa-trash-alt" style="color:red"></i></a>    
     </td>
     <td>
     </td>
@@ -80,6 +82,6 @@
     </table>
     
     </div>
-    
+    </div>
     
     

@@ -22,7 +22,38 @@
 </head>
 <body>
 
-<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/ack">ok</a>
+<div class="container">
+ <div class="row">
+ <div class="col-sm-6 item-photo">
+<img style="max-width:100%; margin-top:30 px;" src="C:\Users\USER\Desktop\Online Shop\87107-200.png">
+</div>
+ 
+ <div class="col-md-6" style="border:0px solid gray">
+ 
+ 
+<button class="btn btn-success btn-lg btn-block"><th><h1>Order Details</h1></th></button><br>
+<table align="center"  width="70%"  class="table table-hover table-condensed table-bordered">
+<h3>Total: ${orderDetails.orderDetailsTotal}</h3>
+<h3>Name : ${orderDetails.user.name }</h3>
+<h3>Address: ${orderDetails.orderDetailsAddress }</h3>
+<h3>PIN: ${orderDetails.orderDetailsPin }</h3>
+<h3>Date: ${orderDetails.orderDetails }</h3>
+
+<c:if test="${param.paymentMode == 'NetBanking'}">
+
+<h3>Payment Mode: Net Banking</h3>
+</c:if>
+
+<c:if test="${param.paymentMode != 'NetBanking'}">
+
+<h3>Payment Mode: COD</h3>
+</c:if>
+</table>
+<a class="btn btn-warning" href="${pageContext.request.contextPath}/ack"><h2>Confirm</h2></a>
+</div>
+</div>
+</div>
+
 
 </body>
 </html>
