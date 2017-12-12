@@ -36,7 +36,7 @@ public class ProductDaoImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		Session session = getSession();
 
-		Query query = session.createQuery("from Product");
+		Query query = session.createQuery("from Product where productStatus = 'true' ");
 		List<Product> productList = query.list();
         session.close();
 		return productList;

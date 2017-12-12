@@ -69,9 +69,20 @@ public class ProductController {
 		}
 
 		product.setProductImage(productImage);
-
-		productDao.addProduct(product);
-		return new ModelAndView("redirect:/viewProducts");
+		product.setProductStatus(true);	
+		ModelAndView mv=	new ModelAndView("redirect:/viewProducts");
+		if(productDao.addProduct(product))
+		{
+			
+			mv.addObject("addStatus", "Product added successfully");
+			return mv;
+		}
+		else
+		{
+			mv.addObject("addStatus", "Product could not be added .... ");
+			return mv;
+		}
+		 
 	}
 
 	@RequestMapping("/viewProducts")
@@ -128,11 +139,13 @@ public class ProductController {
 		ServletContext context = request.getServletContext();
 		String realContextPath = context.getRealPath("/");
 		String ProductName = product.getProductName();
-		
-		if (productImageFile != null) {
-			System.out.println("kkkkkkkkkkkkkk");
-			fileName = realContextPath + "resources/img/" + ProductName + ".jpg";
-			productImage="resources/img/" + ProductName + ".jpg";
+		fileName = realContextPath + "resources/img/" + ProductName + ".jpg";
+		productImage="resources/img/" + ProductName + ".jpg";
+		if (productImageFile != null && productImageFile.getSize()>0) {
+			
+			
+			System.out.println("kkkkkkkkkkkkkk"+productImageFile.getSize());
+			
 			System.out.println("===" + fileName + "===");
 			File fileobj = new File(fileName);
 			try {
@@ -143,14 +156,20 @@ public class ProductController {
 				e.printStackTrace();
 
 			}
+			product.setProductImage("");
 			product.setProductImage(productImage);
-
+			product.setProductStatus(true);	
 			productDao.updateProduct(product);
 			modelAndView.addObject("successMessage", "product updated successfully");
-		} else {
-			modelAndView.addObject("errorMessage", "failed to update product");
+		} /*else {
+			modelAndView.addObject("errorMessage", "failed to update product");*/
+		/*}*/
+		else
+		{
+			product.setProductImage("");
+			product.setProductImage(productImage);
+			product.setProductStatus(true);	
 		}
-
 		return modelAndView;
 	}
 

@@ -93,7 +93,7 @@ public class CartItemDaoImpl implements CartItemDao{
 		// TODO Auto-generated method stub
 		Session session=getSession();
 		try{
-			Query query=session.createQuery("From CartItem");
+			Query query=session.createQuery("From CartItem where cartItemsStatus != 'ORDERED'");
 			return query.list();
 		}
 		catch(HibernateException e){

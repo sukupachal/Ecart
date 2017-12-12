@@ -4,9 +4,31 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
   
-<h1>Product List</h1>  
-<table border="2" width="70%" cellpadding="2">  
-<tr><th>Id</th><th>Name</th><th>Price</th></tr>  
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<%@ include file="header.jsp" %>
+
+ <div class="container">
+ <div class="row">
+<div class="col-md-6" style="border:0px solid gray">
+ 
+  
+  
+<h1><b>Product List</b></h1>  
+<table align="center"  width="70%"  class="table table-hover table-condensed table-bordered table-responsive">  
+<tr><th>Id</th><th>Name</th><th>Price</th><th><th><th><th></th></tr>  
    <c:forEach var="product" items="${list}">   
    <tr> 
    <td>${product.productId}</td>   
@@ -21,4 +43,14 @@
    </c:forEach>  
    </table>  
    <br/>  
-    <tr><th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/addProduct">Add Product</a></th></tr>
+    <tr><th><a class="btn btn-primary btn-block" href="${pageContext.request.contextPath}/addProduct">Add Product</a></th></tr>
+    
+    
+    </div>
+    </div>
+    </div>
+    </body>
+    </html>
+    
+    
+    

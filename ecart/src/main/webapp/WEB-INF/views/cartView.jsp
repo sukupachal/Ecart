@@ -42,7 +42,7 @@
     </tr>
     </thead>
     <tbody>
-    
+    <c:set var="grandTotal" scope="session" value="0"/>
     <c:forEach items="${cartItems}" var="cartItem">
     <c:set var="grandTotal" scope="session" value="${ grandTotal + cartItem.cartItemSubTotal}"/>
     <tr>

@@ -50,7 +50,7 @@ public class CartController {
 	Cart cart=user.getCart();
 	
 	
-	List<CartItem> cartItems=cartItemDao.getAllCartItem();
+	List<CartItem> cartItems=cartItemDao.getCartItemsByCart(cart);
 	System.out.println("cartItem is null"+(cartItems==null));
 	httpSession.setAttribute("cartItems", cartItems);
 	double total=0;
@@ -143,14 +143,10 @@ public class CartController {
 		Cart cart=user.getCart();
 		orderDetails.setOrderDetailsTotal(tot);
 		orderDetails.setOrderDetails(d);
+		orderDetails.setOrderDetailsStatus("NotConfirmed");
 		orderDetailsDao.insertOrderDetails(orderDetails);
 		
-		List<CartItem> cartItems=cartItemDao.getAllCartItem();
-		for(CartItem cartItem:cartItems){
-			cartItem.setOrderDetails(orderDetails);
-			cartItem.setCartItemsStatus("ORDERED");
-			cartItemDao.updateCartItem(cartItem);
-		}
+		
 		System.out.println("cartItems are updated");
 		cart.setCartTotal(0);
 		//cartDao.updateCart(cart);

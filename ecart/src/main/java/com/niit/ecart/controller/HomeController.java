@@ -23,6 +23,12 @@ public class HomeController {
 
 			return new ModelAndView("loginPage");
 		}
+	 
+	 @RequestMapping(value = "/403", method = RequestMethod.GET)
+		public ModelAndView noAccess() {
+
+			return new ModelAndView("403");
+		}
 	 @RequestMapping("/home")  
 	    public ModelAndView index(HttpSession session){  
 		 ModelAndView mv= new ModelAndView("home");

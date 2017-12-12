@@ -37,12 +37,12 @@
           </ul>
         </li>
         
-       <security:authorize access="hasRole('ROLE_ADMIN')"><li><a href="#">Page 3</a></li></security:authorize>
+       <security:authorize access="hasRole('ROLE_ADMIN')"><li></li></security:authorize>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
         
-        <c:if test="${pageContext.request.userPrincipal.name==null}"><li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li></c:if>
+        <c:if test="${pageContext.request.userPrincipal.name==null}"><li><a href="${pageContext.request.contextPath}/loginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li></c:if>
         <c:if test="${pageContext.request.userPrincipal.name!=null}"><li><a href="">Hello ${pageContext.request.userPrincipal.name}</a></li></c:if>
          <c:if test="${pageContext.request.userPrincipal.name!=null}"><li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li></c:if>
      
