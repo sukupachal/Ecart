@@ -22,10 +22,10 @@
 <div class="container">
 <table align="center"  width="70%"  class="table table-hover table-condensed table-bordered">  
 <br><br>
-<tr><th>Products Images</th><th>Name of the Products</th><th>Show Products</th></tr>  
+<tr><th>Products Images</th><th>Name of the Products</th><th>Action</th></tr>  
    <c:forEach var="product" items="${productList}">   
    <tr>  
-   <td><img src="${pageContext.request.contextPath}/${user.userImage}" height="50" width="50"></td> 
+   <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="50" width="50"></td> 
    <td>${product.productName}</td>  
         
   

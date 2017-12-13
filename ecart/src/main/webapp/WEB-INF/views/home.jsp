@@ -49,7 +49,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="C:\Users\USER\Desktop\Online Shop\9to5google-hero.jpg" alt="Image">
+        <img src="${pageContext.request.contextPath}\resources\img\iphone-8-white.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>New Google Pixel2</h3>
           <p>This week's top stories...</p>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="item">
-        <img src="C:\Users\USER\Desktop\Online Shop\iphone-8-white.jpg" alt="Image">
+        <img src="${pageContext.request.contextPath}\resources\img\9to5google-hero.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>iphone 8</h3>
           <p>This week's top stories...</p>
@@ -76,29 +76,7 @@
     </a>
 </div>
   
-<div class="container text-center">    
-  <h3>What We Do</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="C:\Users\USER\Desktop\Online Shop\bbb.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Buy This Is Not Your Story</p>
-    </div>
-    <div class="col-sm-4"> 
-      <img src="C:\Users\USER\Desktop\Online Shop\front.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Buy The Boy Who Loved</p>    
-    </div>
-    <div class="col-sm-4">
-      <div class="well">
-       <p>Buy This Is Not Your Story by SAVI SHARMA @just of Rs.75</p>
-      </div>
-      <div class="well">
-       <p>Buy One Indian Girl by Chetan Bhagat @just of Rs.88</p>
-      </div>
-    </div>
-  </div>
-</div><br>
-  
-  <footer class="container-fluid text-center">
+   <footer class="container-fluid text-center">
   <p>100% Purchase Protection</p>
 </footer>
   

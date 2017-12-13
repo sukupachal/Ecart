@@ -44,7 +44,7 @@
      
      <div class="col-xs-9">
      <ul class="menu-items">
-     <li>Details of the product</li>
+     <br><li>100% Original Product...</li>
      </ul>
      </div>
      

@@ -5,7 +5,7 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
     
-     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+     <!DOCTYPE html>
 <html>
 
 <head>
@@ -22,8 +22,7 @@
    
       <c:if test="${successMessage != null}"> 
    
-    
-    <div class="alert alert-sucess alert-dismissable container">
+     <div class="alert alert-sucess alert-dismissable container">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     ${successMessage}
     </div>

@@ -28,7 +28,7 @@
 <div class="container">
  <div class="row">
  <div class="col-sm-6 item-photo">
-<img style="max-width:100%; margin-top:30 px;" src="C:\Users\USER\Desktop\Online Shop\customer_details_icon.png">
+<img style="max-width:100%; margin-top:30 px;" src="${pageContext.request.contextPath}\resources\img\customer_details_icon.png">
 </div>
 
 <form>

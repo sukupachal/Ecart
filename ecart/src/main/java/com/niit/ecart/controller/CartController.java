@@ -133,7 +133,8 @@ public class CartController {
 	@RequestMapping(value="/addToOrderDetails",method=RequestMethod.POST)
 	public ModelAndView
 	addToOrderDetails(@ModelAttribute("OrderDetails") OrderDetails orderDetails,Principal principal,HttpSession httpsession){
-		Double tot=(Double)httpsession.getAttribute("grandTotal");
+		Double tot=(Double)
+		httpsession.getAttribute("grandTotal");
 		//int total=Integer.parseInt(tot);
 		System.out.println("at addToOrderDetails");
 		ModelAndView modelAndView=new ModelAndView("redirect:/orderDetails");

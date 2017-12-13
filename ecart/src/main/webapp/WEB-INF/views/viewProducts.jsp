@@ -20,6 +20,8 @@
 <body>
 <%@ include file="header.jsp" %>
 
+
+
  <div class="container">
  <div class="row">
 <div class="col-md-6" style="border:0px solid gray">
@@ -37,8 +39,8 @@
    <td>${product.productImage}</td>  
   
   <td><img src="${pageContext.request.contextPath}/${product.productImage}" height="50" width="50"></td>
-   <td><a href="${pageContext.request.contextPath}/discontinueProduct/${product.productId}">Discontinue</a></td>
-  <td><a href="${pageContext.request.contextPath}/updateProduct/${product.productId}">Edit</a></td>
+   <td><a href="${pageContext.request.contextPath}/discontinueProduct/${product.productId}"><button type="button" class="btn btn-danger">Discontinue</button></a></td>
+  <td><a href="${pageContext.request.contextPath}/updateProduct/${product.productId}"><button type="button" class="btn btn-success">Edit</button></a></td>
    </tr>  
    </c:forEach>  
    </table>  

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+  <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+
    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <c:set var="context" value="${pageContext.request.contextPath}"></c:set> 
 
 <!DOCTYPE html>
@@ -18,14 +20,42 @@
 
 <title>Insert title here</title>
 
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+</style>
 
 </head>
+
+<c:if test="${successMessage != null}"> 
+   
+     <div class="alert alert-sucess alert-dismissable container">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    ${addStatus}
+    </div>
+    </c:if> 
+
+  
+
+
+
+
 <div class="container">
- <div class="row">
+ <div class="row" >
+  <div align="center"  width="70%"  class="table table-hover table-condensed table-bordered"> 
+<div class="col-sm-6" >
+  <h1><span class="label label-success"><b>Update Product</b></span></h1>
 
-
- 
-        <h1><b>Update Product</b></h1>  
        <form:form method="post" action="${context}/updateProducts"  enctype="multipart/form-data">    
         <table >    
          <tr>    
@@ -36,26 +66,26 @@
           <td>Price :</td>    
           <td><form:input path="productPrice" /></td>  
          </tr> 
-         <tr><td>
+         <tr>
          <form:select class="form-control" path="productCategory.categoryId">
          <c:forEach items="${categoryList}" var="productCategory">
          <form:option value="${productCategory.categoryId}">
          ${productCategory.categoryName}
          </form:option>
          </c:forEach>
-         </form:select> </td></tr>
+         </form:select> <br></tr>
          
          <tr>    
           <td><form:hidden path="productImage"/></td>     
          </tr> 
          <tr>    
-          <td>Choose Image </td>   
+          <td>Choose Image : </td>   
           <td><input type="file" name="productImageFile"/></td>  
          </tr>
          
-         <tr>    
+             <tr>    
           <td> </td>    
-          <td><input type="submit" value="Save" /></td>    
+          <td><input type="submit" value="Save"  class="btn btn-warning"/></td>    
          </tr>    
         </table>    
            
@@ -65,3 +95,7 @@
        </form:form>    
        </div>
        </div>
+       </div>
+       </div>
+       </html>
+       

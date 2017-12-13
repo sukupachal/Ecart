@@ -22,6 +22,11 @@
 </head>
 <body>
  
+ <div class="container">
+ <div class="row">
+ <div class="col-sm-6 item-photo">
+<img style="max-width:100%; margin-top:30 px;" src="${pageContext.request.contextPath}\resources\img\login.png">
+</div>
     
     
    <h3>Welcome Back</h3>
@@ -57,5 +62,11 @@ method='POST'>
   </form>
   
   <p>Not a user? <a href="${pageContext.request.contextPath}/register">Register now</a>
+  
+  </p>
+  </div>
+  </div>
+  
 </body>
+
 </html>
