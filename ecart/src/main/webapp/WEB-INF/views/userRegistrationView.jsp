@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<title>Register Page</title>
 
  <jsp:include page="header.jsp"></jsp:include> 
  <title>Bootstrap Case</title>   
@@ -40,21 +40,21 @@
      <div class="roe"></div>
      <div class="col-sm-11 col-sm-offset-1">
      <div class="login-form"><!--login form-->
-     <h2>Please SignUp</h2>
+     <h2><b>Please SignUp</b></h2>
      <form:form method="post" action="${pageContext.request.contextPath}/registerUser" >
-     <li>UserName<form:input type="text" class="form-control" placeholder="username" path="name"/></li>
+     <li>UserName<form:input type="text" class="form-control" placeholder="username" path="name" required="true" /></li>
      <br>
      <br>
-     <li>UserId<form:input type="text" class="form-control" placeholder="UserId" path="id"/></li>
+     <li>UserId<form:input type="text" class="form-control" placeholder="UserId" path="id"  required="true"/></li>
      <br>
      <br>
-     <li>Password<form:input type="password" class="form-control" placeholder="Password" path="password"/></li>
+     <li>Password<form:input type="password" class="form-control" placeholder="maximum and minimum five digit can be entered" path="password" required="true"/></li>
      <br>
      <br>
-     <li>Email-Id<form:input type="email" class="form-control" placeholder="EmailId" path="email"/></li>
+     <li>Email-Id<form:input type="email" class="form-control" placeholder="EmailId" path="email" required="true"/></li>
      <br>
      <br>
-     <button type="submit" class="btn btn-default">SignUp</button>
+     <button type="submit" class="btn btn-success">SignUp</button>
      </form:form>
       
       <p>Already a User? <a href="${pageContext.request.contextPath}/loginPage">Login now</a>

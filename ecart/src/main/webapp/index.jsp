@@ -16,7 +16,7 @@
 
 <title>Insert title here</title>
 </head>
-
+ <% response.sendRedirect("http://localhost:8080/ecart/index") ;%>
 
 <html>
 <body>

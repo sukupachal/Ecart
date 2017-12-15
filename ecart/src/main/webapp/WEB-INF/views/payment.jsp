@@ -20,9 +20,6 @@
 <div class="container">
   
   
-
-
-
     <div class="row">
         <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
@@ -35,7 +32,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form"  method="post"  action="${pageContext.request.contextPath}/checkout">
                     <div class="form-group">
                         <label for="cardNumber">
                             CARD NUMBER</label>
@@ -59,12 +56,14 @@
                         </div>
                         <div class="col-xs-5 col-md-5 pull-right">
                             <div class="form-group">
-                                <label for="cvCode">
-                                    CV CODE</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                                <label for="cvv Code">
+                                    CVV</label>
+                                <input type="password" class="form-control" id="cvvCode" placeholder="CVV" required />
                             </div>
                         </div>
                     </div>
+                    <input  type="hidden"  name="paymentMode" value="NetBanking">
+           			 <input type="submit" class="btn btn-success btn-lg btn-block" value="Confirm">         
                     </form>
                 </div>
             </div>
@@ -73,7 +72,7 @@
                 </li>
             </ul>
             <br/>
-            <a href="${pageContext.request.contextPath}/checkout?paymentMode=NetBanking" class="btn btn-success btn-lg btn-block" role="button">Confirm</a>
+           
         </div>
     </div>
 </div>

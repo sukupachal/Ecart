@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
            <!-- each <li> </li> is one menu option -->
-        <li class="active"><a href="${pageContext.request.contextPath}/home">Home</a></li>
+        <li class="active"><a href="${pageContext.request.contextPath}/index">Home</a></li>
         <!-- <li class="dropdown"> is used to create a menu option which will have sub menu -->
         <li class="dropdown">
         

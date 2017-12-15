@@ -46,7 +46,7 @@ xmlns:beans="http://www.springframework.org/schema/beans"
     </http>
  
     <authentication-manager>
-        <authentication-provider>
+        <!-- <authentication-provider>
             <user-service>
                 <user name="user10" password="12345" authorities="ROLE_USER" />
                 <user name="admin10" password="12345" authorities="ROLE_USER, ROLE_ADMIN" 
@@ -54,7 +54,7 @@ xmlns:beans="http://www.springframework.org/schema/beans"
 />
             </user-service>
         </authentication-provider>
- 
+  -->
  
  
         <!-- authentication from database -->

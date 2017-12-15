@@ -45,7 +45,7 @@ public class ProductDaoImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		Session session = getSession();
 
-		Query query = session.createQuery("from Product where productCategory.categoryId = :categoryId");
+		Query query = session.createQuery("from Product where productCategory.categoryId = :categoryId  and productStatus = 'true'" );
 		query.setParameter("categoryId", categoryId);
 		List<Product> productList = query.list();
         session.close();

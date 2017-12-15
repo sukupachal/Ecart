@@ -44,7 +44,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("product") Product product, HttpServletRequest request,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file , HttpSession session) {
 
 		byte fileBytes[];
 		FileOutputStream fos = null;
@@ -74,12 +74,12 @@ public class ProductController {
 		if(productDao.addProduct(product))
 		{
 			
-			mv.addObject("addStatus", "Product added successfully");
+			session.setAttribute("sucessMessage", "Product added successfully");
 			return mv;
 		}
 		else
 		{
-			mv.addObject("addStatus", "Product could not be added .... ");
+			session.setAttribute("sucessMessage", "Product could not be added ....");
 			return mv;
 		}
 		 
@@ -99,10 +99,10 @@ public class ProductController {
 		Product product = productDao.listByProductId(productId);
 		product.setProductStatus(false);
 		if (productDao.updateProduct(product)) {
-			modelAndView.addObject("sucessMessage", "product deactivated sucessfully");
+			httpSession.setAttribute("sucessMessage", "product deactivated sucessfully");
 
 		} else {
-			modelAndView.addObject("essorMessage", "Failed to deactivate product");
+			httpSession.setAttribute("sucessMessage", "Product Could not be Deactivated!!!!");
 
 		}
 
@@ -160,15 +160,18 @@ public class ProductController {
 			product.setProductImage(productImage);
 			product.setProductStatus(true);	
 			productDao.updateProduct(product);
-			modelAndView.addObject("successMessage", "product updated successfully");
+			httpSession.setAttribute("sucessMessage", "product updateded sucessfully");
 		} /*else {
 			modelAndView.addObject("errorMessage", "failed to update product");*/
 		/*}*/
 		else
 		{
+			httpSession.setAttribute("sucessMessage", "product updateded sucessfully");
+			System.out.println("MMMM "+product.getProductPrice());
 			product.setProductImage("");
 			product.setProductImage(productImage);
-			product.setProductStatus(true);	
+			product.setProductStatus(true);
+			productDao.updateProduct(product);
 		}
 		return modelAndView;
 	}

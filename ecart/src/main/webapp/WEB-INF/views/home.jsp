@@ -51,7 +51,7 @@
       <div class="item active">
         <img src="${pageContext.request.contextPath}\resources\img\iphone-8-white.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>New Google Pixel2</h3>
+          <h3>iphone-8</h3>
           <p>This week's top stories...</p>
         </div>      
       </div>
@@ -59,7 +59,7 @@
       <div class="item">
         <img src="${pageContext.request.contextPath}\resources\img\9to5google-hero.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>iphone 8</h3>
+          <h3>New Google Pixel2</h3>
           <p>This week's top stories...</p>
         </div>      
       </div>
