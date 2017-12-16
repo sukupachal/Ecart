@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Acknowledgement</title>
 </head>
 <body>
 <h2>THANK YOU FOR SHOPPING!!! HAVE A GREAT DAY...</h2>

@@ -5,6 +5,8 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
     
+    <title>Cart_view</title>
+    
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -72,7 +74,9 @@
      </c:forEach>
      <tr>
     <th><b>Grand Total : ${grandTotal}</b></th>
+    <c:if test="${ not cartItems.isEmpty()}">
       <th><a class="btn btn-default check_out" href="${pageContext.request.contextPath}/order">Place Order</a></th>
+      </c:if>
      <th><a class="btn btn-default continue_shopping" href="${pageContext.request.contextPath}/home">Continue shopping</a></th>
     
      <b>Cart</b><img src="${pageContext.request.contextPath}\resources\img\ecom-cart.gif" style="width:128px;height:128px;">

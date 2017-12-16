@@ -44,14 +44,15 @@
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+      
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="${pageContext.request.contextPath}\resources\img\iphone-8-white.jpg" alt="Image">
+        <img src="${pageContext.request.contextPath}\resources\img\Lenovo-Yoga-720.png" alt="Image">
         <div class="carousel-caption">
-          <h3>iphone-8</h3>
+          <h3>New Lenovo Yoga 720</h3>
           <p>This week's top stories...</p>
         </div>      
       </div>
@@ -59,11 +60,14 @@
       <div class="item">
         <img src="${pageContext.request.contextPath}\resources\img\9to5google-hero.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>New Google Pixel2</h3>
+          <h3>Best selling Smartphones</h3>
           <p>This week's top stories...</p>
         </div>      
       </div>
     </div>
+    
+    
+    
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -75,6 +79,8 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
+
+
   
    <footer class="container-fluid text-center">
   <p>100% Purchase Protection</p>

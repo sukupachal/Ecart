@@ -79,7 +79,7 @@ public class ProductController {
 		}
 		else
 		{
-			session.setAttribute("sucessMessage", "Product could not be added ....");
+			session.setAttribute("sucessMessage", "Product could not be added!!!!");
 			return mv;
 		}
 		 
